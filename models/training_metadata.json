@@ -1,0 +1,468 @@
+{
+  "model_name": "Deep Convolutional Neural Network (CNN)",
+  "epochs": 6,
+  "batch_size": 128,
+  "test_accuracy": 99.22,
+  "test_loss": 0.0236,
+  "total_parameters": 272490,
+  "trainable_parameters": 271850,
+  "history": {
+    "accuracy": [
+      0.9312,
+      0.9785,
+      0.9826,
+      0.9865,
+      0.9885,
+      0.9893
+    ],
+    "val_accuracy": [
+      0.6545,
+      0.9887,
+      0.991,
+      0.9927,
+      0.9913,
+      0.9913
+    ],
+    "loss": [
+      0.2274,
+      0.072,
+      0.0544,
+      0.0436,
+      0.0373,
+      0.0335
+    ],
+    "val_loss": [
+      0.8843,
+      0.0383,
+      0.0308,
+      0.0284,
+      0.0293,
+      0.0297
+    ]
+  },
+  "per_class_accuracy": {
+    "0": {
+      "total": 980,
+      "correct": 977,
+      "accuracy": 99.69
+    },
+    "1": {
+      "total": 1135,
+      "correct": 1128,
+      "accuracy": 99.38
+    },
+    "2": {
+      "total": 1032,
+      "correct": 1023,
+      "accuracy": 99.13
+    },
+    "3": {
+      "total": 1010,
+      "correct": 1008,
+      "accuracy": 99.8
+    },
+    "4": {
+      "total": 982,
+      "correct": 974,
+      "accuracy": 99.19
+    },
+    "5": {
+      "total": 892,
+      "correct": 880,
+      "accuracy": 98.65
+    },
+    "6": {
+      "total": 958,
+      "correct": 939,
+      "accuracy": 98.02
+    },
+    "7": {
+      "total": 1028,
+      "correct": 1023,
+      "accuracy": 99.51
+    },
+    "8": {
+      "total": 974,
+      "correct": 969,
+      "accuracy": 99.49
+    },
+    "9": {
+      "total": 1009,
+      "correct": 1001,
+      "accuracy": 99.21
+    }
+  },
+  "confusion_matrix": [
+    [
+      977,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      0
+    ],
+    [
+      0,
+      1128,
+      2,
+      2,
+      0,
+      0,
+      1,
+      1,
+      1,
+      0
+    ],
+    [
+      2,
+      1,
+      1023,
+      0,
+      1,
+      0,
+      0,
+      4,
+      1,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      1008,
+      0,
+      1,
+      0,
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      974,
+      0,
+      0,
+      0,
+      1,
+      7
+    ],
+    [
+      0,
+      0,
+      0,
+      9,
+      0,
+      880,
+      1,
+      1,
+      0,
+      1
+    ],
+    [
+      4,
+      2,
+      1,
+      0,
+      0,
+      4,
+      939,
+      0,
+      8,
+      0
+    ],
+    [
+      0,
+      1,
+      2,
+      1,
+      1,
+      0,
+      0,
+      1023,
+      0,
+      0
+    ],
+    [
+      1,
+      0,
+      0,
+      1,
+      0,
+      1,
+      0,
+      0,
+      969,
+      2
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      4,
+      1,
+      0,
+      3,
+      0,
+      1001
+    ]
+  ],
+  "layers": [
+    {
+      "name": "conv2d",
+      "type": "Conv2D",
+      "output_shape": [
+        "None",
+        "28",
+        "28",
+        "32"
+      ],
+      "params": 320
+    },
+    {
+      "name": "batch_normalization",
+      "type": "BatchNormalization",
+      "output_shape": [
+        "None",
+        "28",
+        "28",
+        "32"
+      ],
+      "params": 128
+    },
+    {
+      "name": "conv2d_1",
+      "type": "Conv2D",
+      "output_shape": [
+        "None",
+        "26",
+        "26",
+        "32"
+      ],
+      "params": 9248
+    },
+    {
+      "name": "batch_normalization_1",
+      "type": "BatchNormalization",
+      "output_shape": [
+        "None",
+        "26",
+        "26",
+        "32"
+      ],
+      "params": 128
+    },
+    {
+      "name": "max_pooling2d",
+      "type": "MaxPooling2D",
+      "output_shape": [
+        "None",
+        "13",
+        "13",
+        "32"
+      ],
+      "params": 0
+    },
+    {
+      "name": "dropout",
+      "type": "Dropout",
+      "output_shape": [
+        "None",
+        "13",
+        "13",
+        "32"
+      ],
+      "params": 0
+    },
+    {
+      "name": "conv2d_2",
+      "type": "Conv2D",
+      "output_shape": [
+        "None",
+        "13",
+        "13",
+        "64"
+      ],
+      "params": 18496
+    },
+    {
+      "name": "batch_normalization_2",
+      "type": "BatchNormalization",
+      "output_shape": [
+        "None",
+        "13",
+        "13",
+        "64"
+      ],
+      "params": 256
+    },
+    {
+      "name": "conv2d_3",
+      "type": "Conv2D",
+      "output_shape": [
+        "None",
+        "11",
+        "11",
+        "64"
+      ],
+      "params": 36928
+    },
+    {
+      "name": "batch_normalization_3",
+      "type": "BatchNormalization",
+      "output_shape": [
+        "None",
+        "11",
+        "11",
+        "64"
+      ],
+      "params": 256
+    },
+    {
+      "name": "max_pooling2d_1",
+      "type": "MaxPooling2D",
+      "output_shape": [
+        "None",
+        "5",
+        "5",
+        "64"
+      ],
+      "params": 0
+    },
+    {
+      "name": "dropout_1",
+      "type": "Dropout",
+      "output_shape": [
+        "None",
+        "5",
+        "5",
+        "64"
+      ],
+      "params": 0
+    },
+    {
+      "name": "flatten",
+      "type": "Flatten",
+      "output_shape": [
+        "None",
+        "1600"
+      ],
+      "params": 0
+    },
+    {
+      "name": "dense",
+      "type": "Dense",
+      "output_shape": [
+        "None",
+        "128"
+      ],
+      "params": 204928
+    },
+    {
+      "name": "batch_normalization_4",
+      "type": "BatchNormalization",
+      "output_shape": [
+        "None",
+        "128"
+      ],
+      "params": 512
+    },
+    {
+      "name": "dropout_2",
+      "type": "Dropout",
+      "output_shape": [
+        "None",
+        "128"
+      ],
+      "params": 0
+    },
+    {
+      "name": "dense_1",
+      "type": "Dense",
+      "output_shape": [
+        "None",
+        "10"
+      ],
+      "params": 1290
+    }
+  ],
+  "samples": {
+    "0": {
+      "path": "models/samples/digit_0.png",
+      "index": 3,
+      "label": 0
+    },
+    "1": {
+      "path": "models/samples/digit_1.png",
+      "index": 2,
+      "label": 1
+    },
+    "2": {
+      "path": "models/samples/digit_2.png",
+      "index": 1,
+      "label": 2
+    },
+    "3": {
+      "path": "models/samples/digit_3.png",
+      "index": 18,
+      "label": 3
+    },
+    "4": {
+      "path": "models/samples/digit_4.png",
+      "index": 4,
+      "label": 4
+    },
+    "5": {
+      "path": "models/samples/digit_5.png",
+      "index": 8,
+      "label": 5
+    },
+    "6": {
+      "path": "models/samples/digit_6.png",
+      "index": 11,
+      "label": 6
+    },
+    "7": {
+      "path": "models/samples/digit_7.png",
+      "index": 0,
+      "label": 7
+    },
+    "8": {
+      "path": "models/samples/digit_8.png",
+      "index": 61,
+      "label": 8
+    },
+    "9": {
+      "path": "models/samples/digit_9.png",
+      "index": 7,
+      "label": 9
+    }
+  },
+  "dataset_info": {
+    "name": "MNIST (Modified National Institute of Standards and Technology)",
+    "authors": "Yann LeCun, Corinna Cortes, Christopher J.C. Burges",
+    "training_samples": 60000,
+    "test_samples": 10000,
+    "image_dimensions": "28 x 28 pixels (Grayscale)",
+    "num_classes": 10,
+    "classes": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9"
+    ]
+  }
+}
